@@ -1,0 +1,54 @@
+/**
+ * Animations globales réellement réutilisées.
+ * Toutes respectent prefers-reduced-motion.
+ */
+
+/* Apparition légère au chargement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utilisable via className="fadeInUp" */
+.fadeInUp {
+  animation: fadeInUp var(--transition-slow) ease-out both;
+}
+
+.fadeIn {
+  animation: fadeIn var(--transition-slow) ease-out both;
+}
+
+/* Rotation continue (indicateurs de chargement) */
+.spin {
+  animation: spin 900ms linear infinite;
+}
+
+/* Réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  .fadeInUp,
+  .fadeIn,
+  .spin {
+    animation: none;
+  }
+}

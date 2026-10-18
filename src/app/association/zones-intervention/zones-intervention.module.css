@@ -1,0 +1,161 @@
+.header {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.areasSection {
+  padding-block: var(--space-12);
+  background-color: var(--color-surface);
+}
+
+.areasList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.areaCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+}
+
+.areaCard:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.areaIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background-color: rgb(20 92 58 / 10%);
+  color: var(--color-primary);
+}
+
+.areaName {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800; /* Très gras */
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.areaDescription {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.projectsSection {
+  padding-block: var(--space-16);
+  background-color: var(--color-background);
+}
+
+.projectsCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.projectsTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--color-text-inverse);
+  margin: 0 0 var(--space-3);
+}
+
+.projectsText {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 90%);
+  margin: 0;
+  max-width: 65ch;
+}
+
+.projectsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary-dark); /* Contraste sur le fond vert */
+  background-color: var(--color-text-inverse);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  align-self: flex-start;
+  transition: all var(--transition-fast);
+}
+
+.projectsLink:hover,
+.projectsLink:focus-visible {
+  background-color: var(--color-border);
+  transform: translateY(-2px);
+}
+
+.projectsLink svg {
+  transition: transform var(--transition-fast);
+}
+
+.projectsLink:hover svg,
+.projectsLink:focus-visible svg {
+  transform: translateX(4px);
+}
+
+.note {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.noteText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60ch;
+}
+
+@media (min-width: 640px) {
+  .areasList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .projectsCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item, .item:hover, .areaCard, .areaCard:hover, .projectsLink, .projectsLink:hover, .projectsLink svg {
+    transition: none;
+    transform: none;
+  }
+}

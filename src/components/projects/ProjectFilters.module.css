@@ -1,0 +1,100 @@
+.wrapper {
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 800; /* Bien gras */
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.select:hover {
+  border-color: var(--color-primary-light);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 3px rgb(20 92 58 / 15%);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reset {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: var(--space-3) var(--space-6);
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-accent); /* ROUGE */
+  background-color: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.reset:hover:not(:disabled) {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+.reset:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--color-border-strong);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: var(--space-4);
+  }
+}

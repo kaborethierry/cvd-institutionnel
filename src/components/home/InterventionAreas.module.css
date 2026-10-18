@@ -1,0 +1,102 @@
+.section {
+  padding-block: var(--space-16);
+  background-color: var(--color-background); /* Fond un peu plus clair pour faire ressortir les cartes */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+/* Effet de survol : la carte se soulève */
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Ligne décorative en haut qui change de couleur */
+.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+/* Couleurs spécifiques pour chaque zone */
+.colorGreen::before {
+  background-color: var(--color-primary); /* Vert */
+}
+
+.colorBlue::before {
+  background-color: var(--color-secondary); /* Bleu */
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-2);
+}
+
+/* On colore l'icône en fonction de la zone */
+.colorGreen .iconWrap {
+  background-color: rgb(20 92 58 / 10%);
+  color: var(--color-primary);
+}
+
+.colorBlue .iconWrap {
+  background-color: rgb(23 74 120 / 10%);
+  color: var(--color-secondary);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800; /* Très gras */
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.description {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item, .item:hover {
+    transition: none;
+    transform: none;
+  }
+}

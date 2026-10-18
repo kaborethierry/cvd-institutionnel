@@ -1,0 +1,133 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  height: 100%;
+  transition: border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  background-color: rgb(20 92 58 / 10%);
+  color: var(--color-primary);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.titleLink:hover,
+.titleLink:focus-visible {
+  color: var(--color-primary);
+}
+
+.summary {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0;
+  flex: 1;
+}
+
+.action {
+  margin-top: var(--space-1);
+}
+
+.actionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.actionLink:hover,
+.actionLink:focus-visible {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary-dark);
+}
+
+.actionLink svg {
+  transition: transform var(--transition-fast);
+}
+
+.actionLink:hover svg,
+.actionLink:focus-visible svg {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .actionLink,
+  .actionLink svg {
+    transition: none;
+  }
+  .card:hover {
+    transform: none;
+  }
+  .actionLink:hover svg,
+  .actionLink:focus-visible svg {
+    transform: none;
+  }
+}
+/* Styles ajoutés pour l'image */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Format paysage */
+  background-color: var(--color-surface-muted);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-base);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* On enveloppe le contenu pour qu'il soit bien sous l'image */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  flex: 1;
+}

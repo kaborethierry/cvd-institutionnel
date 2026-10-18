@@ -1,0 +1,105 @@
+/**
+ * Tokens de design CVD.
+ * Source unique de vérité pour les couleurs, espacements, typographie
+ * et rayons. Aucun hexadécimal ne doit être écrit ailleurs.
+ *
+ * Les couleurs doivent être revues après analyse du logo officiel.
+ *
+ * NOTE : --font-manrope et --font-inter sont injectées par next/font
+ * via src/app/layout.js. On les utilise en priorité, avec un fallback
+ * système robuste.
+ */
+
+:root {
+  /* ─────────── Couleurs institutionnelles ─────────── */
+  --color-primary: #145c3a;
+  --color-primary-dark: #0d4229;
+  --color-primary-light: #1c7a4d;
+
+  --color-secondary: #174a78;
+  --color-secondary-dark: #103455;
+  --color-secondary-light: #24629b;
+
+  --color-accent: #b42332;
+  --color-accent-dark: #8d1a26;
+
+  /* ─────────── Surfaces et fonds ─────────── */
+  --color-background: #f5f7f5;
+  --color-surface: #ffffff;
+  --color-surface-muted: #eef2ee;
+  --color-overlay: rgb(15 30 20 / 55%);
+
+  /* ─────────── Texte ─────────── */
+  --color-text: #202b25;
+  --color-text-muted: #66736b;
+  --color-text-inverse: #ffffff;
+  --color-text-link: var(--color-primary);
+  --color-text-link-hover: var(--color-primary-dark);
+
+  /* ─────────── Bordures et séparateurs ─────────── */
+  --color-border: #dce4de;
+  --color-border-strong: #b8c4bb;
+
+  /* ─────────── États fonctionnels ─────────── */
+  --color-focus: #174a78;
+  --color-success: #145c3a;
+  --color-warning: #8a6d1a;
+  --color-error: #b42332;
+
+  /* ─────────── Typographie ─────────── */
+  /* Les variables --font-manrope et --font-inter sont injectées par
+     next/font dans src/app/layout.js. On les utilise en priorité,
+     avec une pile système en repli si elles ne sont pas chargées. */
+  --font-heading: var(--font-manrope), system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+
+  /* ─────────── Conteneur ─────────── */
+  --container-width: 1320px;
+  --container-narrow: 760px;
+  --container-padding: var(--space-4);
+
+  /* ─────────── Espacements ─────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* ─────────── Rayons ─────────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* ─────────── Ombres ─────────── */
+  --shadow-card: 0 8px 28px rgb(20 40 28 / 7%);
+  --shadow-card-hover: 0 12px 36px rgb(20 40 28 / 12%);
+  --shadow-header: 0 2px 12px rgb(20 40 28 / 6%);
+
+  /* ─────────── Transitions ─────────── */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 320ms ease;
+
+  /* ─────────── Points de rupture (référence) ─────────── */
+  --bp-mobile-small: 360px;
+  --bp-mobile: 390px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-desktop-large: 1440px;
+}
+
+/* Respect du réglage système : réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+}

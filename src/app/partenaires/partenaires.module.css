@@ -1,0 +1,21 @@
+.header {
+  padding-block: var(--space-12) var(--space-4);
+}
+
+.gridSection {
+  padding-block: var(--space-8);
+}
+
+.note {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.noteText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60ch;
+}

@@ -1,0 +1,33 @@
+.header {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.content {
+  padding-block: var(--space-8);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.info {
+  min-width: 0;
+}
+
+.form {
+  min-width: 0;
+}
+
+.locationSection {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-12);
+  }
+}

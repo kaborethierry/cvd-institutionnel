@@ -1,0 +1,156 @@
+/**
+ * Styles typographiques de base.
+ * Échelle alignée sur le cahier des charges.
+ */
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4.2vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+p {
+  margin-bottom: var(--space-4);
+  line-height: 1.65;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Liens dans le contenu courant */
+a {
+  color: var(--color-text-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration-thickness: 2px;
+}
+
+/* Liens qui doivent rester sans soulignement (boutons, cartes entières) */
+a.no-underline {
+  text-decoration: none;
+}
+
+/* Petits textes et métadonnées */
+small {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+strong,
+b {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* Listes dans les zones éditoriales */
+.prose ul,
+.prose ol {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li {
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+
+/* Citations */
+blockquote {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-text);
+  padding-left: var(--space-6);
+  border-left: 3px solid var(--color-primary);
+  margin: var(--space-6) 0;
+}
+
+/* Code (rare, mais cohérent) */
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+/* Sélection du texte */
+::selection {
+  background-color: rgb(20 92 58 / 20%);
+  color: var(--color-text);
+}

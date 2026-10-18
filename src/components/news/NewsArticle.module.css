@@ -1,0 +1,119 @@
+.article {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-block: var(--space-12);
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  text-align: center; /* Centre le titre et la date */
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-accent); /* Rouge CVD */
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-primary-dark); /* Vert foncé */
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.excerpt {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin: 0 auto;
+  max-width: 65ch;
+}
+
+.cover {
+  margin-block: var(--space-8);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card-hover);
+  background-color: var(--color-surface-muted);
+}
+
+/* Le contenu de l'article */
+.content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  font-weight: 400;
+  background-color: var(--color-surface);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.content p {
+  margin-block: 0 var(--space-5);
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.footer {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover,
+.backLink:focus-visible {
+  color: var(--color-primary);
+}
+
+.backLink svg {
+  transition: transform var(--transition-fast);
+}
+
+.backLink:hover svg,
+.backLink:focus-visible svg {
+  transform: translateX(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backLink,
+  .backLink svg {
+    transition: none;
+  }
+  .backLink:hover svg,
+  .backLink:focus-visible svg {
+    transform: none;
+  }
+}

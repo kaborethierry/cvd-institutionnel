@@ -1,0 +1,11 @@
+.header {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.filtersSection {
+  padding-block: var(--space-4) var(--space-8);
+}
+
+.gridSection {
+  padding-block: var(--space-4) var(--space-16);
+}

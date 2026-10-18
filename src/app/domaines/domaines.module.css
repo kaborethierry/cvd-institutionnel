@@ -1,0 +1,7 @@
+.header {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.gridSection {
+  padding-block: var(--space-8) var(--space-16);
+}

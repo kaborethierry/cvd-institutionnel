@@ -1,0 +1,42 @@
+/* ═══════════════════════════════════════════════════════════
+   Page Équipe — bascule cercle / grille
+   Seul mécanisme de bascule : ici.
+   ═══════════════════════════════════════════════════════════ */
+
+.header {
+  padding-block: var(--space-8) var(--space-4);
+}
+
+.circleSection {
+  display: none;
+}
+
+.gridSection {
+  display: block;
+  padding-block: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .circleSection {
+    display: block;
+    padding-block: var(--space-12);
+  }
+
+  .gridSection {
+    display: none;
+  }
+}
+
+.note {
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.noteText {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 60ch;
+}
