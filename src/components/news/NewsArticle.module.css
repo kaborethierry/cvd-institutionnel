@@ -11,7 +11,7 @@
   flex-direction: column;
   gap: var(--space-4);
   margin-bottom: var(--space-8);
-  text-align: center; /* Centre le titre et la date */
+  text-align: center;
 }
 
 .meta {
@@ -21,7 +21,7 @@
   gap: var(--space-2);
   font-size: 0.9rem;
   font-weight: 800;
-  color: var(--color-accent); /* Rouge CVD */
+  color: var(--color-accent);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -32,9 +32,8 @@
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 800;
   line-height: 1.2;
-  color: var(--color-primary-dark); /* Vert foncé */
+  color: var(--color-primary-dark);
   margin: 0;
-  letter-spacing: -0.01em;
 }
 
 .excerpt {
@@ -54,7 +53,6 @@
   background-color: var(--color-surface-muted);
 }
 
-/* Le contenu de l'article */
 .content {
   font-size: 1.1rem;
   line-height: 1.8;

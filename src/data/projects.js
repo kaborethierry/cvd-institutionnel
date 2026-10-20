@@ -1,16 +1,8 @@
 /**
  * Projets de la CVD.
- * Les 10 projets ci-dessous reprennent les informations officielles
- * fournies par l'association : intitulés, bailleurs, partenaires, zones,
- * activités et périodes.
- *
- * Aucun budget, aucun nombre de bénéficiaires, aucun impact chiffré
- * n'est inventé.
- *
- * Le champ `status` est déduit uniquement des périodes documentées.
- * Les mentions ambiguës (« à nos jours », « en cours ») sont conservées
- * comme telles et marquées `confirmed: false` tant qu'elles ne sont pas
- * validées par l'association.
+ * Les 10 projets ci-dessous reprennent les informations officielles.
+ * Le statut "termine" est appliqué à tous les projets ayant une date de fin.
+ * Les projets sans image officielle afficheront un bloc vert avec le titre.
  */
 
 export const projects = [
@@ -34,7 +26,7 @@ export const projects = [
       "Prévention et lutte contre le paludisme",
       "Visites à domicile (VAD)",
     ],
-    domainSlugs: ["sante-communautaire"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["mouhoun"],
     image: "/images/projets/projet-pads.jpg",
     imageAlt: "Illustration du programme PADS",
@@ -57,17 +49,17 @@ export const projects = [
     partners: ["IPC/BF", "Kasabati"],
     locations: ["Province du Mouhoun"],
     startDate: "2021",
-    endDate: null,
-    period: { start: "2021", end: null, confirmed: false },
-    status: "a-confirmer",
+    endDate: "2026",
+    period: { start: "2021", end: "2026", confirmed: true },
+    status: "termine",
     activities: [
       "Promotion de la santé par le dépistage du VIH",
       "Prise en charge communautaire",
     ],
-    domainSlugs: ["sante-communautaire"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["mouhoun"],
-    image: "/images/projets/projet-vih-populations-cles.jpg",
-    imageAlt: "Illustration de la prévention du VIH auprès des populations clés",
+    image: null,
+    imageAlt: null,
     budget: null,
     beneficiaryCount: null,
     featured: true,
@@ -87,14 +79,14 @@ export const projects = [
     partners: ["IPC/BF", "AIDSETI"],
     locations: ["Région de la Boucle du Mouhoun"],
     startDate: "2021",
-    endDate: null,
-    period: { start: "2021", end: null, confirmed: false },
-    status: "a-confirmer",
+    endDate: "2026",
+    period: { start: "2021", end: "2026", confirmed: true },
+    status: "termine",
     activities: [
       "Prévention du VIH et des IST",
       "Prise en charge en faveur des populations clés",
     ],
-    domainSlugs: ["sante-communautaire"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["boucle-du-mouhoun"],
     image: null,
     imageAlt: null,
@@ -125,8 +117,8 @@ export const projects = [
     ],
     domainSlugs: ["eau-hygiene-assainissement"],
     interventionAreaSlugs: ["mouhoun"],
-    image: "/images/projets/projet-ecdd.jpg",
-    imageAlt: "Illustration du projet ECDD — accès à l'eau",
+    image: null,
+    imageAlt: null,
     budget: null,
     beneficiaryCount: null,
     featured: true,
@@ -149,7 +141,7 @@ export const projects = [
     period: { start: "2021", end: "2023", confirmed: true },
     status: "termine",
     activities: ["Campagne de dépistage du VIH"],
-    domainSlugs: ["sante-communautaire"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["mouhoun"],
     image: null,
     imageAlt: null,
@@ -184,7 +176,7 @@ export const projects = [
       "Formation des ASBC, RC, PRV et agents de santé",
       "Collecte de données",
     ],
-    domainSlugs: ["nutrition"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["boucle-du-mouhoun"],
     image: "/images/projets/projet-nutrition.jpg",
     imageAlt: "Illustration du projet PREMAM / PASSANAD",
@@ -221,7 +213,7 @@ export const projects = [
       "Distribution de bols alimentaires et de cartes-conseils",
       "Collecte de données",
     ],
-    domainSlugs: ["nutrition", "protection-sociale"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["mouhoun"],
     image: null,
     imageAlt: null,
@@ -262,15 +254,10 @@ export const projects = [
       "Émissions et diffusion radio",
       "Bilan",
     ],
-    domainSlugs: [
-      "sante-communautaire",
-      "protection-sociale",
-      "cohesion-sociale",
-    ],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["boucle-du-mouhoun"],
-    image: "/images/projets/projet-deplaces-internes.jpg",
-    imageAlt:
-      "Illustration du projet de dépistage VIH auprès des personnes déplacées internes",
+    image: null,
+    imageAlt: null,
     budget: null,
     beneficiaryCount: null,
     featured: true,
@@ -293,9 +280,9 @@ export const projects = [
       "Centre hospitalier régional de Dédougou",
     ],
     startDate: "2023-10",
-    endDate: null,
-    period: { start: "2023-10", end: null, confirmed: false },
-    status: "a-confirmer",
+    endDate: "2026-03",
+    period: { start: "2023-10", end: "2026-03", confirmed: true },
+    status: "termine",
     activities: [
       "Dépistage VIH",
       "Recherche des personnes perdues de vue",
@@ -305,10 +292,10 @@ export const projects = [
       "Approche de l'index testing",
       "Dispensation communautaire",
     ],
-    domainSlugs: ["sante-communautaire"],
+    domainSlugs: ["sante"],
     interventionAreaSlugs: ["boucle-du-mouhoun"],
-    image: "/images/projets/projet-eawa.jpg",
-    imageAlt: "Illustration du projet EAWA / PEPFAR",
+    image: null,
+    imageAlt: null,
     budget: null,
     beneficiaryCount: null,
     featured: true,
@@ -329,14 +316,14 @@ export const projects = [
     startDate: "2025-05",
     endDate: "2026-03",
     period: { start: "2025-05", end: "2026-03", confirmed: true },
-    status: "a-confirmer",
+    status: "termine",
     activities: [
       "Promotion des services d'assainissement écologiques durables",
     ],
     domainSlugs: ["eau-hygiene-assainissement", "environnement"],
     interventionAreaSlugs: [],
-    image: "/images/projets/projet-ecosan.jpg",
-    imageAlt: "Illustration du projet EcoSan — assainissement écologique",
+    image: null,
+    imageAlt: null,
     budget: null,
     beneficiaryCount: null,
     featured: true,

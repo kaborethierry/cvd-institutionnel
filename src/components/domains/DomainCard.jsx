@@ -5,29 +5,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  HeartPulse,
-  Utensils,
-  Users,
-  Wheat,
-  ShieldCheck,
-  Droplets,
-  Lightbulb,
-  HandHeart,
-  Leaf,
-  ArrowRight,
-} from "lucide-react";
+import { HeartPulse, Droplets, Leaf, ArrowRight } from "lucide-react";
 import styles from "./DomainCard.module.css";
 
+// Mapping mis à jour pour les 3 grands domaines
 const ICONS = {
-  "sante-communautaire": HeartPulse,
-  nutrition: Utensils,
-  "sante-reproductive": Users,
-  "securite-alimentaire": Wheat,
-  "protection-sociale": ShieldCheck,
+  sante: HeartPulse,
   "eau-hygiene-assainissement": Droplets,
-  entrepreneuriat: Lightbulb,
-  "cohesion-sociale": HandHeart,
   environnement: Leaf,
 };
 
@@ -55,7 +39,7 @@ export default function DomainCard({ domain }) {
 
       <div className={styles.content}>
         <div className={styles.iconWrap} aria-hidden="true">
-          <Icon size={24} strokeWidth={1.75} />
+          <Icon size={28} strokeWidth={1.75} />
         </div>
 
         <h3 className={styles.title}>
@@ -74,8 +58,8 @@ export default function DomainCard({ domain }) {
           >
             <span>En savoir plus</span>
             <ArrowRight
-              size={14}
-              strokeWidth={2}
+              size={16}
+              strokeWidth={2.5}
               aria-hidden="true"
               focusable="false"
             />

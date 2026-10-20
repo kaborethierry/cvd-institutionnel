@@ -105,7 +105,8 @@ export default function AssociationIdentity() {
 
         {association.officialPurpose ? (
           <div className={styles.purpose}>
-            <h2 className={styles.purposeTitle}>Objet de l'association</h2>
+            {/* Le titre est maintenant "Objectif de l'association" */}
+            <h2 className={styles.purposeTitle}>Objectif de l'association</h2>
             <p className={styles.purposeText}>{association.officialPurpose}</p>
           </div>
         ) : null}

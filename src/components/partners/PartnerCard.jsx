@@ -1,3 +1,8 @@
+/**
+ * PartnerCard
+ * Carte d'un partenaire.
+ */
+
 import { ExternalLink } from "lucide-react";
 import styles from "./PartnerCard.module.css";
 
@@ -14,18 +19,20 @@ export default function PartnerCard({ partner, index = 0 }) {
 
   const content = (
     <div className={styles.card}>
-      {hasLogo ? (
-        <img
-          src={partner.logo}
-          alt={`Logo de ${fullName || name}`}
-          className={styles.logo}
-          loading="lazy"
-        />
-      ) : (
-        <span className={`${styles.mark} ${colorClass}`} aria-hidden="true">
-          {name.slice(0, 3).toUpperCase()}
-        </span>
-      )}
+      <div className={styles.top}>
+        {hasLogo ? (
+          <img
+            src={partner.logo}
+            alt={`Logo de ${fullName || name}`}
+            className={styles.logo}
+            loading="lazy"
+          />
+        ) : (
+          <span className={`${styles.mark} ${colorClass}`} aria-hidden="true">
+            {name.slice(0, 3).toUpperCase()}
+          </span>
+        )}
+      </div>
 
       <div className={styles.text}>
         <p className={styles.name}>{name}</p>
@@ -36,7 +43,7 @@ export default function PartnerCard({ partner, index = 0 }) {
 
       {hasWebsite ? (
         <ExternalLink
-          size={16}
+          size={14}
           strokeWidth={2.5}
           aria-hidden="true"
           focusable="false"

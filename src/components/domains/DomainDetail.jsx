@@ -5,21 +5,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, HeartPulse, Utensils, Users, Wheat, ShieldCheck, Droplets, Lightbulb, HandHeart, Leaf, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, HeartPulse, Droplets, Leaf, CheckCircle2 } from "lucide-react";
 import PageContainer from "@/components/layout/PageContainer";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { getProjectsByDomain } from "@/services/projectsService";
 import styles from "./DomainDetail.module.css";
 
 const ICONS = {
-  "sante-communautaire": HeartPulse,
-  nutrition: Utensils,
-  "sante-reproductive": Users,
-  "securite-alimentaire": Wheat,
-  "protection-sociale": ShieldCheck,
+  sante: HeartPulse,
   "eau-hygiene-assainissement": Droplets,
-  entrepreneuriat: Lightbulb,
-  "cohesion-sociale": HandHeart,
   environnement: Leaf,
 };
 
@@ -30,7 +24,6 @@ export default function DomainDetail({ domain }) {
   const summary = domain.summary || domain.shortDescription || "";
   const description = domain.description || "";
   const activities = Array.isArray(domain.activities) ? domain.activities : [];
-  const beneficiaries = Array.isArray(domain.beneficiaries) ? domain.beneficiaries : [];
   const relatedProjects = getProjectsByDomain(domain.slug);
   const hasImage = typeof domain.image === "string" && domain.image.trim().length > 0;
 
@@ -49,7 +42,7 @@ export default function DomainDetail({ domain }) {
             </div>
 
             <div className={styles.titleBlock}>
-              <p className={styles.eyebrow}>Domaine d'intervention</p>
+              <p className={styles.eyebrow}>Domaine principal</p>
               <h1 className={styles.title}>{domain.title}</h1>
               {summary ? <p className={styles.summary}>{summary}</p> : null}
             </div>
@@ -73,38 +66,23 @@ export default function DomainDetail({ domain }) {
         {description ? (
           <section className={styles.section} aria-labelledby="domain-description-title">
             <h2 id="domain-description-title" className={styles.sectionTitle}>
-              Présentation
+              Présentation du pilier
             </h2>
             <p className={styles.text}>{description}</p>
           </section>
         ) : null}
 
+        {/* Les activités concrètes (anciens domaines) */}
         {activities.length > 0 ? (
           <section className={styles.section} aria-labelledby="domain-activities-title">
             <h2 id="domain-activities-title" className={styles.sectionTitle}>
-              Activités conduites
+              Activités concrètes et thématiques liées
             </h2>
             <ul className={styles.list}>
               {activities.map((activity, i) => (
                 <li key={i} className={styles.listItem}>
-                  <CheckCircle2 size={18} strokeWidth={2} aria-hidden="true" focusable="false" className={styles.listIcon} />
+                  <CheckCircle2 size={20} strokeWidth={2.5} aria-hidden="true" focusable="false" className={styles.listIcon} />
                   <span>{activity}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
-
-        {beneficiaries.length > 0 ? (
-          <section className={styles.section} aria-labelledby="domain-beneficiaries-title">
-            <h2 id="domain-beneficiaries-title" className={styles.sectionTitle}>
-              Publics bénéficiaires
-            </h2>
-            <ul className={styles.list}>
-              {beneficiaries.map((b, i) => (
-                <li key={i} className={styles.listItem}>
-                  <CheckCircle2 size={18} strokeWidth={2} aria-hidden="true" focusable="false" className={styles.listIcon} />
-                  <span>{b}</span>
                 </li>
               ))}
             </ul>

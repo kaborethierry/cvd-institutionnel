@@ -31,16 +31,6 @@
   background-color: var(--color-primary);
 }
 
-.cardPending::before {
-  background-color: var(--color-border-strong); /* Gris pour la vision en attente */
-}
-
-.cardPending {
-  border-style: dashed;
-  background-color: var(--color-surface-muted);
-  box-shadow: none;
-}
-
 .iconWrap {
   display: inline-flex;
   align-items: center;
@@ -52,11 +42,6 @@
   color: var(--color-primary);
 }
 
-.cardPending .iconWrap {
-  background-color: var(--color-border);
-  color: var(--color-text-muted);
-}
-
 .cardTitle {
   font-family: var(--font-heading);
   font-size: 1.35rem;
@@ -66,24 +51,15 @@
 }
 
 .cardText {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
   line-height: 1.7;
   color: var(--color-text);
   margin: 0;
-}
-
-.cardPending .cardText {
-  color: var(--color-text-muted);
-  font-style: italic;
-  font-weight: 400;
+  max-width: 80ch; /* Empêche le texte d'être trop étiré sur très grand écran */
 }
 
 @media (min-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-  }
   .card {
     padding: var(--space-10);
   }

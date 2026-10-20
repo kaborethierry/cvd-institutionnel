@@ -13,7 +13,7 @@ import styles from "./domaines.module.css";
 export const metadata = {
   title: "Domaines d'intervention de la CVD",
   description:
-    "Les neuf domaines d'intervention de la Coordination des Volontaires de Dédougou : santé communautaire, nutrition, santé sexuelle et reproductive, sécurité alimentaire, protection sociale, WASH, entrepreneuriat, cohésion sociale et environnement.",
+    "La Coordination des Volontaires de Dédougou structure son action autour de trois grands domaines : Santé, Eau-Hygiène-Assainissement et Environnement.",
 };
 
 export default function DomainesPage() {
@@ -33,8 +33,8 @@ export default function DomainesPage() {
           <SectionHeading
             id="domaines-title"
             eyebrow="Nos domaines"
-            title="Neuf domaines pour agir au plus près des besoins"
-            description="La CVD structure son action autour de neuf domaines complémentaires, en cohérence avec sa mission de promotion de la santé et d'amélioration durable des conditions de vie des populations."
+            title="Trois grands piliers d'intervention"
+            description="La CVD concentre son action autour de trois domaines fondamentaux : la Santé, l'Eau, l'Hygiène et l'Assainissement, et l'Environnement. Découvrez les activités concrètes menées dans chacun de ces piliers."
           />
         </PageContainer>
       </section>
