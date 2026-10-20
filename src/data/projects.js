@@ -1,8 +1,6 @@
 /**
  * Projets de la CVD.
  * Les 10 projets ci-dessous reprennent les informations officielles.
- * Le statut "termine" est appliqué à tous les projets ayant une date de fin.
- * Les projets sans image officielle afficheront un bloc vert avec le titre.
  */
 
 export const projects = [
@@ -322,8 +320,8 @@ export const projects = [
     ],
     domainSlugs: ["eau-hygiene-assainissement", "environnement"],
     interventionAreaSlugs: [],
-    image: null,
-    imageAlt: null,
+    image: "/images/projets/projet-ecosan.jpg", // <-- L'image est restaurée ici
+    imageAlt: "Illustration du projet EcoSan — assainissement écologique",
     budget: null,
     beneficiaryCount: null,
     featured: true,

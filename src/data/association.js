@@ -38,10 +38,10 @@ export const association = {
     "Contribuer à la promotion de la santé et à l'amélioration durable des conditions de vie des populations.",
 
   officialPurpose:
-    "La CVD a pour objet la réalisation d'actions dans les domaines de la Santé, de l'Eau, de l'Hygiène et de l'Assainissement, de l'Environnement et du Développement durable.",
+    "La CVD a pour objectif la réalisation d'actions dans ses trois domaines fondamentaux : la Santé, l'Eau, l'Hygiène et l'Assainissement, ainsi que l'Environnement et le Développement durable.",
 
   membership:
-    "L'association regroupe des femmes et des hommes désignant de façon libre et engagée œuvrer au développement social et durable.",
+    "L'association regroupe des femmes et des hommes désirant de façon libre et engagée œuvrer au développement social et durable.",
 
   // Non fournie par l'association : null pour empêcher tout affichage inventé.
   vision: null,
@@ -50,10 +50,10 @@ export const association = {
   values: [],
 
   shortDescription:
-    "La Coordination des Volontaires de Dédougou est une association burkinabè née en 1996 de la mobilisation de volontaires engagés aux côtés des communautés. Elle agit dans la santé, la protection sociale, l'eau, l'hygiène, l'assainissement et le développement durable.",
+    "La Coordination des Volontaires de Dédougou est une association burkinabè née en 1996 de la mobilisation de volontaires engagés aux côtés des communautés. Elle agit dans la santé, l'eau, l'hygiène, l'assainissement et la protection de l'environnement.",
 
   longDescription:
-    "Depuis sa création, la Coordination des Volontaires de Dédougou accompagne les populations dans l'amélioration de leurs conditions de vie. Ses interventions couvrent la santé communautaire, la nutrition, la santé sexuelle et reproductive, la sécurité alimentaire, la protection sociale, l'eau, l'hygiène et l'assainissement, l'entrepreneuriat, la cohésion sociale et la protection de l'environnement.",
+    "Depuis sa création, la Coordination des Volontaires de Dédougou accompagne les populations dans l'amélioration de leurs conditions de vie. Ses interventions s'articulent autour de trois grands piliers : la Santé (incluant la nutrition, la santé reproductive, la sécurité alimentaire et la protection sociale), l'Eau, l'Hygiène et l'Assainissement (WASH), et l'Environnement (incluant le développement durable et l'entrepreneuriat).",
 
   history: [
     {
@@ -86,14 +86,8 @@ export const association = {
   ],
 
   engagementDomainSlugs: [
-    "sante-communautaire",
-    "nutrition",
-    "sante-reproductive",
-    "securite-alimentaire",
-    "protection-sociale",
+    "sante",
     "eau-hygiene-assainissement",
-    "entrepreneuriat",
-    "cohesion-sociale",
     "environnement",
   ],
 

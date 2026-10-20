@@ -56,6 +56,51 @@
   border-bottom: 2px solid var(--color-border);
 }
 
+/* Styles pour les 3 piliers */
+.pillarsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.pillarGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.pillarTitle {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Couleurs des piliers */
+.colorGreen {
+  color: var(--color-primary);
+  border-bottom-color: rgb(20 92 58 / 30%);
+}
+
+.colorBlue {
+  color: var(--color-secondary);
+  border-bottom-color: rgb(23 74 120 / 30%);
+}
+
+.colorRed {
+  color: var(--color-accent);
+  border-bottom-color: rgb(180 35 50 / 30%);
+}
+
+/* Liste des objectifs */
 .list {
   list-style: none;
   margin: 0;
@@ -88,8 +133,8 @@
   width: 44px;
   height: 44px;
   border-radius: var(--radius-pill);
-  background-color: rgb(180 35 50 / 8%); /* Fond rouge clair */
-  color: var(--color-accent); /* Icône ROUGE */
+  background-color: rgb(180 35 50 / 8%);
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 

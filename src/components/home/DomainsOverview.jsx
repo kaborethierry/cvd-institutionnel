@@ -1,6 +1,6 @@
 /**
  * DomainsOverview
- * Aperçu des 9 domaines d'intervention.
+ * Aperçu des 3 domaines d'intervention.
  * Server Component.
  */
 
@@ -13,7 +13,7 @@ import { domains } from "@/data/domains";
 import styles from "./DomainsOverview.module.css";
 
 export default function DomainsOverview() {
-  const preview = Array.isArray(domains) ? domains.slice(0, 6) : [];
+  const preview = Array.isArray(domains) ? domains.slice(0, 3) : [];
 
   return (
     <section className={styles.section} aria-labelledby="domains-title">
@@ -21,8 +21,8 @@ export default function DomainsOverview() {
         <SectionHeading
           id="domains-title"
           eyebrow="Nos domaines"
-          title="Des interventions structurées pour un impact durable"
-          description="La CVD agit dans neuf domaines complémentaires, au plus près des besoins des communautés."
+          title="Trois grands piliers pour un impact durable"
+          description="La CVD structure son action autour de trois domaines fondamentaux : la Santé, l'Eau, l'Hygiène et l'Assainissement, et l'Environnement."
           action={{ label: "Tous les domaines", href: "/domaines" }}
         />
 
