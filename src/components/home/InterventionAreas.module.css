@@ -1,6 +1,6 @@
 .section {
   padding-block: var(--space-16);
-  background-color: var(--color-background); /* Fond un peu plus clair pour faire ressortir les cartes */
+  background-color: var(--color-background);
 }
 
 .grid {
@@ -39,7 +39,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
+  height: 6px; /* Un peu plus épais */
 }
 
 /* Couleurs spécifiques pour chaque zone */
@@ -74,7 +74,7 @@
 
 .name {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.5rem; /* Plus grand pour les 2 zones */
   font-weight: 800; /* Très gras */
   color: var(--color-primary-dark);
   margin: 0;
@@ -90,7 +90,7 @@
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
   }
 }
 
