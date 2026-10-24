@@ -1,10 +1,10 @@
 /**
  * TopBar
- * Bandeau supérieur discret : coordonnées + lien Facebook.
+ * Bandeau supérieur discret : coordonnées, adresse postale et lien Facebook.
  * Sur mobile, seul le téléphone reste visible.
  */
 
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import FacebookIcon from "@/components/ui/FacebookIcon";
 import { site } from "@/data/site";
 import styles from "./TopBar.module.css";
@@ -34,6 +34,19 @@ export default function TopBar() {
               </a>
             </li>
           ) : null}
+
+          {/* Adresse Postale */}
+          <li className={`${styles.item} ${styles.hideSmall}`}>
+            <span className={styles.link}>
+              <MapPin
+                size={14}
+                strokeWidth={2}
+                aria-hidden="true"
+                focusable="false"
+              />
+              <span>BP : 11 Dédougou secteur 5 Trypano</span>
+            </span>
+          </li>
 
           {emailHref ? (
             <li className={`${styles.item} ${styles.hideSmall}`}>
