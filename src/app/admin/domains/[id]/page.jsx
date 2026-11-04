@@ -1,8 +1,7 @@
 import { Suspense } from "react";
 import DomainForm from "@/components/admin/DomainForm";
 
-// On enveloppe le composant client qui utilise useParams dans un Suspense
-function DomainEditContent({ id }) {
+function EditDomainContent({ id }) {
   return <DomainForm id={id} />;
 }
 
@@ -11,8 +10,8 @@ export default async function EditDomainPage({ params }) {
   const { id } = resolvedParams;
 
   return (
-    <Suspense fallback={<div className={styles.loadingState}>Chargement…</div>}>
-      <DomainEditContent id={id} />
+    <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center" }}>Chargement…</div>}>
+      <EditDomainContent id={id} />
     </Suspense>
   );
 }
