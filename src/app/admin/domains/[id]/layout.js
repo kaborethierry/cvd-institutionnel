@@ -1,5 +1,5 @@
-// Ce fichier est un Server Component (pas de "use client")
-// Il désactive la validation "instant navigation" pour ce segment
+// Server Component — désactive la validation "instant navigation"
+// pour cette page qui utilise useParams dans un Client Component.
 
 export const instant = false;
 
