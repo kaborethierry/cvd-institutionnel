@@ -1,10 +1,12 @@
+"use client";
+
 /**
  * SiteFooter
  * Pied de page institutionnel.
- * L'année est mise en cache via "use cache" pour éviter l'erreur
- * Next.js 16 `new Date()` pendant le prerendering.
+ * Client Component pour gérer l'année dynamiquement côté client.
  */
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import FacebookIcon from "@/components/ui/FacebookIcon";
@@ -12,13 +14,14 @@ import { site } from "@/data/site";
 import { footerNavigation, legalNavigation } from "@/data/navigation";
 import styles from "./SiteFooter.module.css";
 
-async function getCurrentYear() {
-  "use cache";
-  return new Date().getFullYear();
-}
+export default function SiteFooter() {
+  const [year, setYear] = useState("");
 
-export default async function SiteFooter() {
-  const year = await getCurrentYear();
+  // L'année est calculée côté client pour éviter l'erreur de prerendering
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   const shortName = site.shortName || "CVD";
   const fullName = site.name || "Coordination des Volontaires de Dédougou";
   const description = site.description || "";

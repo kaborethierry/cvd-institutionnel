@@ -1,12 +1,11 @@
 /**
  * Layout racine.
  * Server Component — aucune logique client.
- * Charge les polices, métadonnées globales, skip link,
- * en-tête et pied de page communs.
  */
 
 import { Manrope, Inter } from "next/font/google";
 import { site } from "@/data/site";
+import SiteShell from "@/components/layout/SiteShell"; // <-- On importe le nouveau composant
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import "./globals.css";
@@ -61,11 +60,11 @@ export default function RootLayout({ children }) {
         <a href="#contenu-principal" className="skipLink">
           Aller au contenu principal
         </a>
-        <SiteHeader />
-        <main id="contenu-principal" tabIndex={-1}>
-          {children}
-        </main>
-        <SiteFooter />
+        <SiteShell header={<SiteHeader />} footer={<SiteFooter />}>
+          <main id="contenu-principal" tabIndex={-1}>
+            {children}
+          </main>
+        </SiteShell>
       </body>
     </html>
   );

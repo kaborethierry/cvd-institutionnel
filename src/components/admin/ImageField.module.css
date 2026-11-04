@@ -1,0 +1,58 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.previewRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.preview {
+  display: block;
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--a-radius-sm, 8px);
+  border: 1px solid var(--a-border, #dce2de);
+  background-color: var(--a-surface-muted, #eef1ef);
+}
+
+.previewColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.caption {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--a-text-muted, #5b6a62);
+}
+
+.removedNotice {
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  background-color: rgb(180 35 50 / 8%);
+  border: 1px solid rgb(180 35 50 / 28%);
+  border-radius: var(--a-radius-sm, 8px);
+  color: var(--a-accent-dark, #8f1b27);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.error {
+  margin: 0;
+  color: var(--a-accent-dark, #8f1b27);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.smallButton {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}

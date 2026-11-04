@@ -1,0 +1,417 @@
+/* ─── Variables locales (aucune dépendance au CSS global) ─── */
+.wrapper {
+  --a-primary: #145c3a;
+  --a-primary-dark: #0c3d27;
+  --a-primary-light: #1f7a4f;
+  --a-accent-dark: #8f1b27;
+  --a-surface: #ffffff;
+  --a-surface-muted: #eef1ef;
+  --a-border: #dce2de;
+  --a-border-strong: #b9c3bd;
+  --a-text: #17211c;
+  --a-text-muted: #5b6a62;
+  --a-text-inverse: #ffffff;
+  --a-font: var(--font-body, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
+  --a-font-heading: var(--font-heading, var(--a-font));
+
+  color-scheme: light;
+  font-family: var(--a-font);
+  color: var(--a-text);
+
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  background-color: var(--a-surface);
+}
+
+.wrapper *,
+.wrapper *::before,
+.wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* ─── Panneau de présentation (gauche) ─── */
+.brand {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  color: var(--a-text-inverse);
+  background:
+    radial-gradient(circle at 20% 15%, rgb(255 255 255 / 10%) 0%, transparent 45%),
+    linear-gradient(150deg, var(--a-primary-dark) 0%, var(--a-primary) 100%);
+}
+
+.circleA,
+.circleB {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circleA {
+  width: 380px;
+  height: 380px;
+  right: -140px;
+  bottom: -120px;
+  border: 48px solid rgb(255 255 255 / 6%);
+}
+
+.circleB {
+  width: 180px;
+  height: 180px;
+  left: -60px;
+  top: 55%;
+  background-color: rgb(255 255 255 / 5%);
+}
+
+.brandInner {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+}
+
+.brandLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 2rem;
+  background-color: var(--a-surface);
+  color: var(--a-primary-dark);
+  border-radius: 16px;
+  font-family: var(--a-font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 20%);
+}
+
+.brandTitle {
+  margin: 0 0 1rem;
+  font-family: var(--a-font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.brandText {
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 80%);
+}
+
+.brandList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.brandList li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: rgb(255 255 255 / 92%);
+}
+
+.brandCheck {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 16%);
+  color: var(--a-text-inverse);
+}
+
+/* ─── Panneau du formulaire (droite) ─── */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background-color: #f6f8f7;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2.25rem;
+  background-color: var(--a-surface);
+  border: 1px solid var(--a-border);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgb(16 24 20 / 8%);
+}
+
+.backLink {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--a-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--a-primary);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+/* Logo visible uniquement sur mobile (le panneau de gauche est masqué) */
+.logoMark {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+  background-color: var(--a-primary);
+  color: var(--a-text-inverse);
+  border-radius: 14px;
+  font-family: var(--a-font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-family: var(--a-font-heading);
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--a-primary-dark);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--a-text-muted);
+}
+
+/* ─── Formulaire ─── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--a-text);
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: var(--a-text-muted);
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.inputWrap:focus-within .inputIcon {
+  color: var(--a-primary);
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding: 0 1rem 0 2.9rem;
+  background-color: #ffffff;
+  border: 2px solid var(--a-border);
+  border-radius: 10px;
+  font-family: var(--a-font);
+  font-size: 1rem;
+  color: var(--a-text);
+  -webkit-text-fill-color: var(--a-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputWithToggle {
+  padding-right: 3rem;
+}
+
+.input::placeholder {
+  color: #8a978f;
+  -webkit-text-fill-color: #8a978f;
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--a-border-strong);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--a-primary);
+  box-shadow: 0 0 0 4px rgb(20 92 58 / 14%);
+}
+
+.input:disabled {
+  background-color: var(--a-surface-muted);
+  cursor: not-allowed;
+}
+
+/* Autofill : plus de fond bleu */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  -webkit-text-fill-color: var(--a-text);
+  caret-color: var(--a-text);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.toggleBtn {
+  position: absolute;
+  right: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: var(--a-text-muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.toggleBtn:hover {
+  background-color: var(--a-surface-muted);
+  color: var(--a-primary);
+}
+
+.errorBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: rgb(180 35 50 / 8%);
+  border: 1px solid rgb(180 35 50 / 28%);
+  border-radius: 10px;
+  color: var(--a-accent-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.errorBox svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 52px;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  background-color: var(--a-primary);
+  color: var(--a-text-inverse);
+  border: none;
+  border-radius: 10px;
+  font-family: var(--a-font);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: var(--a-primary-dark);
+  box-shadow: 0 8px 20px rgb(20 92 58 / 28%);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.submitBtn:disabled {
+  background-color: var(--a-border-strong);
+  cursor: not-allowed;
+}
+
+.footerNote {
+  margin: 1.75rem 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--a-text-muted);
+}
+
+/* ─── Tablette et mobile : une seule colonne ─── */
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .panel {
+    padding: 1.5rem 1rem;
+    background: linear-gradient(150deg, var(--a-primary-dark) 0%, var(--a-primary) 100%);
+  }
+
+  .card {
+    border: none;
+    box-shadow: 0 25px 50px rgb(0 0 0 / 28%);
+  }
+
+  .logoMark {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+}
