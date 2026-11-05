@@ -1,28 +1,14 @@
 /**
  * Layout racine.
  * Server Component — aucune logique client.
+ * Utilise les polices système pour éviter les erreurs de build Vercel.
  */
 
-import { Manrope, Inter } from "next/font/google";
 import { site } from "@/data/site";
-import SiteShell from "@/components/layout/SiteShell"; // <-- On importe le nouveau composant
+import SiteShell from "@/components/layout/SiteShell";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import "./globals.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata = {
   title: {
@@ -55,7 +41,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${manrope.variable} ${inter.variable}`}>
+    <html lang="fr">
       <body>
         <a href="#contenu-principal" className="skipLink">
           Aller au contenu principal
